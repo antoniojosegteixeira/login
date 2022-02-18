@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../../contexts/auth";
+import React from "react";
+import { useAuth } from "../../contexts/auth";
 
 export default function Login() {
-  const state = useContext(AuthContext);
+  const { user, setUser } = useAuth();
   function handleLogin() {
-    console.log(state);
+    console.log(user);
   }
 
   return (
