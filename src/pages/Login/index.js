@@ -2,9 +2,13 @@ import React from "react";
 import { useAuth } from "../../contexts/auth";
 
 export default function Login() {
-  const { user, login } = useAuth();
+  const { user, login, logout } = useAuth();
   async function handleLogin() {
     await login();
+  }
+
+  function handleLogout() {
+    logout();
   }
 
   return (
@@ -13,6 +17,7 @@ export default function Login() {
       <span>Username: {user.userName}</span>
       <hr />
       <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogout}>Logout</button>
     </div>
   );
 }

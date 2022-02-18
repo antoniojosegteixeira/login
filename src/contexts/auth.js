@@ -37,7 +37,6 @@ export function useAuth() {
   // Try login
   async function login() {
     const response = await auth.login();
-    console.log(response);
     setUser({
       userName: response.userName,
       userId: response.userId,
@@ -52,5 +51,15 @@ export function useAuth() {
     );
   }
 
-  return { user, login };
+  // Logout
+  function logout() {
+    auth.logout();
+    setUser({
+      userName: "",
+      userId: "",
+      token: "",
+    });
+  }
+
+  return { user, login, logout };
 }

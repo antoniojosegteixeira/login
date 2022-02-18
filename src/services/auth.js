@@ -10,6 +10,10 @@ export async function login(email, password) {
   });
 }
 
+export async function logout() {
+  localStorage.clear();
+}
+
 export function addUserDataToLocalStorage(userName, userId, token) {
   localStorage.setItem("userName", userName);
   localStorage.setItem("userId", userId);
