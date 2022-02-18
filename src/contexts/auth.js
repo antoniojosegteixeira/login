@@ -34,8 +34,10 @@ export function useAuth() {
     }
   }, [setUser]);
 
-  function login() {
-    const response = auth.login();
+  // Try login
+  async function login() {
+    const response = await auth.login();
+    console.log(response);
     setUser({
       userName: response.userName,
       userId: response.userId,

@@ -3,8 +3,8 @@ import { useAuth } from "../../contexts/auth";
 
 export default function Login() {
   const { user, login } = useAuth();
-  function handleLogin() {
-    login();
+  async function handleLogin() {
+    await login();
   }
 
   return (
