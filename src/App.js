@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Routes from "./routes";
+import { AuthProvider, AuthContext } from "./contexts/auth";
 
 function App() {
-  return <Routes />;
+  const state = useContext(AuthContext);
+
+  return (
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
+  );
 }
 
 export default App;
