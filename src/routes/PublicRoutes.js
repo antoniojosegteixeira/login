@@ -1,12 +1,14 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Login from "../pages/Login";
 
-export default function SignRoutes() {
+export default function PublicRoutes() {
   return (
     <BrowserRouter>
-      <Route path="/login" component={Login} />
+      <Routes>
+        <Route path="/login" element={Login} />
+      </Routes>
     </BrowserRouter>
   );
 }
