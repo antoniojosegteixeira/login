@@ -1,7 +1,8 @@
 import React from "react";
 import { useAuth } from "../../contexts/auth";
+import { connect } from "react-redux";
 
-export default function Login() {
+const Login = () => {
   const { user, login, logout } = useAuth();
   async function handleLogin() {
     await login();
@@ -20,4 +21,6 @@ export default function Login() {
       <button onClick={handleLogout}>Logout</button>
     </div>
   );
-}
+};
+
+export default connect((state) => ({ modules: state }))(Login);
