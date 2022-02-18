@@ -7,7 +7,7 @@ export default function PublicRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={Login} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
