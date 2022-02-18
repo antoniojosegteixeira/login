@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
 import * as auth from "../services/auth";
 
 const AuthContext = createContext({});
@@ -21,6 +21,18 @@ export const AuthProvider = ({ children }) => {
 export function useAuth() {
   const context = useContext(AuthContext);
   const { user, setUser } = context;
+
+  // Check if there is data in local storage
+  useEffect(() => {
+    const localStorageUserData = auth.getUserDataFromLocalStorage();
+    if (
+      localStorageUserData.token &&
+      localStorageUserData.userName &&
+      localStorageUserData.userId
+    ) {
+      setUser(localStorageUserData);
+    }
+  }, [setUser]);
 
   function login() {
     const response = auth.login();
