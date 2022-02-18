@@ -6,7 +6,7 @@ import Login from "../pages/Login";
 export default function SignRoutes() {
   return (
     <BrowserRouter>
-      <Route path="/" component={Login} />
+      <Route path="/login" component={Login} />
     </BrowserRouter>
   );
 }
