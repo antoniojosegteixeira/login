@@ -11,3 +11,11 @@ export function addUserDataToLocalStorage(userName, userId, token) {
   localStorage.setItem("userId", userId);
   localStorage.setItem("token", token);
 }
+
+export function getUserDataFromLocalStorage() {
+  return {
+    userName: localStorage.getItem("userName"),
+    userId: localStorage.getItem("userId"),
+    token: localStorage.getItem("token"),
+  };
+}
