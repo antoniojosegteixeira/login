@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext } from "react";
+import * as auth from "../services/auth";
 
 const AuthContext = createContext({});
 
@@ -21,5 +22,15 @@ export function useAuth() {
   const context = useContext(AuthContext);
   const { user, setUser } = context;
 
-  return { user, setUser };
+  function login() {
+    const response = auth.login();
+    setUser({
+      userName: response.userName,
+      userId: response.userId,
+      token: response.token,
+      isSigned: true,
+    });
+  }
+
+  return { user, login };
 }
