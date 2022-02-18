@@ -30,6 +30,12 @@ export function useAuth() {
       token: response.token,
       isSigned: true,
     });
+
+    auth.addUserDataToLocalStorage(
+      response.userName,
+      response.userId,
+      response.token
+    );
   }
 
   return { user, login };
