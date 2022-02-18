@@ -2,7 +2,7 @@ import React from "react";
 import { useAuth } from "../../contexts/auth";
 
 export default function Login() {
-  const { user, setUser } = useAuth();
+  const { user } = useAuth();
   function handleLogin() {
     console.log(user);
   }
