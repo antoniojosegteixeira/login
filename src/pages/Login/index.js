@@ -2,7 +2,7 @@ import React from "react";
 import { useAuth } from "../../contexts/auth";
 import { connect } from "react-redux";
 
-const Login = () => {
+const Login = ({ state }) => {
   const { user, login, logout } = useAuth();
   async function handleLogin() {
     await login();
@@ -11,6 +11,8 @@ const Login = () => {
   function handleLogout() {
     logout();
   }
+
+  console.log(state);
 
   return (
     <div>
@@ -23,4 +25,4 @@ const Login = () => {
   );
 };
 
-export default connect((state) => ({ modules: state }))(Login);
+export default connect((state) => state)(Login);
