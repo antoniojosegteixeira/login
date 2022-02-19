@@ -1,13 +1,9 @@
 const initialState = {
-  user: {
-    name: "",
-    id: "",
-    token: "",
-  },
+  name: "João",
+  id: "",
+  token: "",
 };
 
 export default function userReducer(state = initialState, action) {
-  return {
-    state,
-  };
+  return state;
 }
