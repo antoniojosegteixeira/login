@@ -10,7 +10,7 @@ export async function login(email, password) {
   });
 }
 
-export async function logout() {
+export function logout() {
   localStorage.clear();
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { changeUserName } from "../../redux/actions";
+import { changeUserName, login } from "../../redux/actions";
 
 const Login = ({ user, dispatch }) => {
   return (
@@ -9,9 +9,7 @@ const Login = ({ user, dispatch }) => {
       <hr />
       <span>{user.name}</span>
       <hr />
-      <button onClick={() => dispatch(changeUserName("Tom"))}>
-        Change Name
-      </button>
+      <button onClick={() => dispatch(login())}>Change Name</button>
     </div>
   );
 };
