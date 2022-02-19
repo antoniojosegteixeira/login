@@ -1,13 +1,7 @@
-const initialState = {
-  user: {
-    name: "",
-    id: "",
-    token: "",
-  },
-};
+import { combineReducers } from "redux";
 
-export function reducers(state = initialState, action) {
-  return {
-    modules: true,
-  };
-}
+import user from "./user";
+
+export default combineReducers({
+  user,
+});
